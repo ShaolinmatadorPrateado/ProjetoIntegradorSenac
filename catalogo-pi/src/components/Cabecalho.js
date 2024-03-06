@@ -1,15 +1,34 @@
-export default function Cabecalho(){
-    return (
-        <footer className="py-3 my-4">
-        <ul className="nav justify-content-center border-bottom pb-3 mb-3">
-          <li className="nav-item"><a href="#" className="nav-link px-2 text-muted">Home</a></li>
-          <li className="nav-item"><a href="#" className="nav-link px-2 text-muted">Features</a></li>
-          <li className="nav-item"><a href="#" className="nav-link px-2 text-muted">Pricing</a></li>
-          <li className="nav-item"><a href="#" className="nav-link px-2 text-muted">FAQs</a></li>
-          <li className="nav-item"><a href="#" className="nav-link px-2 text-muted">Sobre</a></li>
-        </ul>
-        <p className="text-center text-muted">© 2024 Leonardo C.O, Inc</p>
-      </footer>
-    )
+import Image from "next/image";
+import Link from "next/link";
+export default function Menu() {
+ 
+  return (<nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+    <div>
+      <Link className="Menu ms-2 link" href="/">Home</Link>
+      <Link className="Cadastro ms-2 link" href="/cadastro">Cadastro</Link>
+    </div>
+    <div>
+      <input />
+      <button className="btn btn-primary ms-2">Pesquisar</button>
+ 
+ 
+ 
+ 
+      <button className="carrinho " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+        <Image src={"/assets/Supla.png"} width={35} height={35} />
+      </button>
+ 
+      <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Carrinho</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <p>Try scrolling the rest of the page to see this option in action.</p>
+        </div>
+      </div>
+    </div>
+  </nav>)
+ 
 }
 

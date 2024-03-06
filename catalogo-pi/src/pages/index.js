@@ -1,12 +1,8 @@
-
-import { Anybody, Inter } from "next/font/google";
 import Produto from "@/components/Produto";
-import Rodape from "@/components/Cabecalho";
+import Cabecalho from "@/components/Cabecalho";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Cabecalho from "@/components/Cabecalho";
-
-const inter = Inter({ subsets: ["latin"] });
+import Rodape from "@/components/Rodape";
 
 export default function Home() {
 
@@ -27,7 +23,7 @@ export default function Home() {
     <>
       <Cabecalho />
       <div className="container-fluid mt-2">
-        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div className="row ">
           {
             listaProduto.map((dado, index) => <Produto
               nome={dado.nome}
@@ -40,7 +36,10 @@ export default function Home() {
 
           }
         </div>
-        <Rodape></Rodape>
+        <Rodape />
+
+        
+       
         <div>
           <h3></h3>
         </div>

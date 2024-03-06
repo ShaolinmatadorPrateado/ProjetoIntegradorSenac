@@ -1,5 +1,5 @@
 import Cabecalho from "@/components/Cabecalho";
-import CustomCheckboxLabel from "@/components/CustomCheckboxLabel";
+import CustomCheckboxLabel from "@/components/CustomCheckBoxLabel";
 import CustomInputLabel from "@/components/CustomInputLabel";
 import CustomTextAreaLabel from "@/components/CustomTextAreaLabel";
 import axios from "axios";
