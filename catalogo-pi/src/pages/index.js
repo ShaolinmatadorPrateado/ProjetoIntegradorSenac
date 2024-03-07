@@ -6,26 +6,40 @@ import Rodape from "@/components/Rodape";
 
 export default function Home() {
 
-  const [listaProduto, setListaProduto] = useState([])
+  const [listaProduto, setListaProduto] = useState([]);
+  const [listaProdutoFiltrado, setListaProdutoFiltrado] = useState([]);
+
 
   useEffect(() => {
     axios
       .get('https://localhost:7134/api/Produto/ListaAsync')
       .then(resp => {
         setListaProduto(resp.data);
+        setListaProdutoFiltrado(resp.data);
         console.log(resp, listaProduto)
       }
 
-      )
-  })
+      );
+  }, []);
+
+  function handlePesquisar(filtro){
+    const valorFiltro = filtro.target.value
+
+    const filtrado = listaProduto.filter((dado) => 
+    dado.nome.toLowerCase().includes(valorFiltro.toLowerCase()))
+
+    setListaProdutoFiltrado(filtrado)
+    console.log(filtro)
+
+  }
 
   return (
     <>
-      <Cabecalho />
+      <Cabecalho pesquisar={handlePesquisar} />
       <div className="container-fluid mt-2">
         <div className="row ">
           {
-            listaProduto.map((dado, index) => <Produto
+            listaProdutoFiltrado.map((dado, index) => <Produto
               nome={dado.nome}
               key={index}
               descricao={dado.descricao}
@@ -38,8 +52,8 @@ export default function Home() {
         </div>
         <Rodape />
 
-        
-       
+
+
         <div>
           <h3></h3>
         </div>
