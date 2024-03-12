@@ -32,6 +32,7 @@ export default function Home() {
     console.log(filtro)
 
   }
+  
 
   return (
     <>

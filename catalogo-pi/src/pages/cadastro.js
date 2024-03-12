@@ -15,12 +15,18 @@ export default function cadastro() {
                                                       novidade: false,
                                                       disponivel: false
                                                     })
+
+                                            
  
   function handleSalvar()
   {
+    dadosProduto.preco = dadosProduto.preco.replace(".","");
+    dadosProduto.preco = dadosProduto.preco.replace(",",".");
     //Enviaremos o post para a API
-    axios.post("https://localhost:7282/api/Produto", dadosProduto)
+    axios.post("https://localhost:7134/api/Produto", dadosProduto)
         .then(res => console.log(res))
+        .catch(res => alert("Campo Vazio Preencha"))
+        
   }
  
   function handleChange(e){
